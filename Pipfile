@@ -6,7 +6,8 @@ name = "pypi"
 [packages]
 chalice = "*"
 httpie = "*"
-boto3 = "*"
+boto3 = "==1.16.20"
+PyJWT = "==1.7.1"
 
 [dev-packages]
 
