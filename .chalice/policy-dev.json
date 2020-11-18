@@ -20,8 +20,8 @@
         "dynamodb:Query"
       ],
       "Resource": [
-        "arn:aws:dynamodb:*:*:table/todo-app-*",
-        "arn:aws:dynamodb:*:*:table/users-app-*"
+        "arn:aws:dynamodb:*:*:table/chalice-todoapp-todo-*",
+        "arn:aws:dynamodb:*:*:table/chalice-todoapp-users-*"
       ],
       "Effect": "Allow"
     }
