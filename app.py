@@ -1,5 +1,6 @@
+import os
+import boto3
 from chalice import Chalice
-
 from chalicelib import db
 
 
@@ -11,7 +12,10 @@ _DB = None
 def get_app_db():
     global _DB
     if _DB is None:
-        _DB = db.InMemoryTodoDB()
+        _DB = db.DynamoDBTodo(
+            boto3.resource('dynamodb').Table(
+                os.environ['APP_TABLE_NAME'])
+        )
     return _DB
 
 
@@ -27,6 +31,11 @@ def add_new_todo():
         description=body['description'],
         metadata=body.get('metadata'),
     )
+
+
+@app.route('/todos/{uid}', methods=['GET'])
+def get_todo(uid):
+    return get_app_db().get_item(uid)
 
 
 @app.route('/todos/{uid}', methods=['DELETE'])
