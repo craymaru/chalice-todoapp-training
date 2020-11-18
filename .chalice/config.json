@@ -6,7 +6,8 @@
       "autogen_policy": false,
       "api_gateway_stage": "api",
       "environment_variables": {
-        "APP_TABLE_NAME": "chalice-todoapp-app-f9cc97b3-d76b-49c3-b9cf-f2d254609820"
+        "APP_TABLE_NAME": "chalice-todoapp-app-f9cc97b3-d76b-49c3-b9cf-f2d254609820",
+        "USERS_TABLE_NAME": "chalice-todoapp-users-d73c7c63-d226-42b2-9359-44cd5a4e66b7"
       }
     }
   }
