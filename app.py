@@ -66,5 +66,15 @@ def get_todos():
     return get_app_db().list_items()
 
 
+@app.route('/todos', methods=['POST'])
+def add_new_todo():
+    body = app.current_request.json_body
+    return get_app_db().add_item(
+        description=body['description'],
+        metadata=body.get('metadata'),
+    )
+
+
+
 # Following the example get_todos() function, add the rest of the required
 # routes here...
