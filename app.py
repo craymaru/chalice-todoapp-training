@@ -75,6 +75,9 @@ def add_new_todo():
     )
 
 
+@app.route('/todos/{uid}', methods=['DELETE'])
+def delete_todo(uid):
+    return get_app_db().delete_item(uid)
 
 # Following the example get_todos() function, add the rest of the required
 # routes here...
