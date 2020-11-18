@@ -3,7 +3,11 @@
   "app_name": "chalice-todoapp",
   "stages": {
     "dev": {
-      "api_gateway_stage": "api"
+      "autogen_policy": false,
+      "api_gateway_stage": "api",
+      "environment_variables": {
+        "APP_TABLE_NAME": "chalice-todoapp-app-f9cc97b3-d76b-49c3-b9cf-f2d254609820"
+      }
     }
   }
 }
